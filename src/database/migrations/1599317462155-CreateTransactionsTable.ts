@@ -4,7 +4,7 @@ export class CreateTransactionsTable1599317462155 implements MigrationInterface 
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(new Table({
-      name: "transaction",
+      name: "transactions",
       columns: [
         { name: "id", type: "uuid", isUnique: true, isPrimary: true, generationStrategy: "uuid", default: "uuid_generate_v4()" },
         { name: "title", type: "varchar" },
@@ -17,7 +17,7 @@ export class CreateTransactionsTable1599317462155 implements MigrationInterface 
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("transaction")
+    await queryRunner.dropTable("transactions")
   }
 
 }
